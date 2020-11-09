@@ -1,16 +1,31 @@
 # Optimizing an ML Pipeline in Azure
 
 ## Overview
-This project is part of the Udacity Azure ML Nanodegree.
-In this project, we build and optimize an Azure ML pipeline using the Python SDK and a provided Scikit-learn model.
-This model is then compared to an Azure AutoML run.
+**This project is part of the Udacity Azure ML Nanodegree.**
+
+Where we start by building and optimizing an Azure ML pipeline using the Python SDK and a provided Scikit-learn model. Once than we compare the accuracy of the best model to an Azure AutoML run. 
 
 ## Summary
-**In 1-2 sentences, explain the problem statement: e.g "This dataset contains data about... we seek to predict..."**
+In a banking context : The main oject of this project is to predict if a client will subscribe to a terme deposit product (Variable value: ('yes') ,('no')) by using a dataset  (located here : https://www.kaggle.com/henriqueyamahata/bank-marketing ) related to direct marketing campaigns of a Portuguese banking institution.
+
+**The main step of the project are described below  : **
+
+1. Create a model using Azure Python SDK "https://docs.microsoft.com/en-us/azure/developer/python/azure-sdk-overview"  and a LogisticRegression "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html" model.
+
+2. Tune the parameter of the Scikit-learn model using hyperdrive "https://docs.microsoft.com/en-us/azure/machine-learning/how-to-tune-hyperparameters"
+
+3. Create a Model using Azure Auto ML "https://docs.microsoft.com/en-us/azure/machine-learning/concept-automated-ml" 
+
+4. Compare the best performing model between the two created solutions based on their Accuracy where i
+
+
+
+
+
 
 **In 1-2 sentences, explain the solution: e.g. "The best performing model was a ..."**
 
-## Scikit-learn Pipeline
+## Scikit-learn Pipeline :
 **Explain the pipeline architecture, including data, hyperparameter tuning, and classification algorithm.**
 
 **What are the benefits of the parameter sampler you chose?**
