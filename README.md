@@ -20,8 +20,7 @@ In a banking context : The main oject of this project is to predict if a client 
 
 **The best model is  :**
 
-The best performing model "VotingEnsemble" with the Accuracy of **0.
-92014** was the result of the Auto ML run.
+The best performing model **Using the VotingEnsemble Algorithm ** with the Accuracy of **0.92014** was the result of the **Auto ML run.**
 
 
 
@@ -29,7 +28,6 @@ The best performing model "VotingEnsemble" with the Accuracy of **0.
 
 
 
-**In 1-2 sentences, explain the solution: e.g. "The best performing model was a ..."**
 
 ## Scikit-learn Pipeline :
 **Explain the pipeline architecture, including data, hyperparameter tuning, and classification algorithm.**
