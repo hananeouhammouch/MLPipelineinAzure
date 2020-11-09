@@ -26,7 +26,7 @@ The best performing model **Using the VotingEnsemble Algorithm** with the Accura
 
 The process of the created Pipeline is composed of two principal Step : 
 
-A. Create the Model using Python : (**train.py**)
+  A. Create the Model using Python : (**train.py**)
 
 1. Create the TabularDataset by using TabularDatasetFactory
 2. Clean the data by using One hote encoding technique to deal with the discret features 
@@ -34,13 +34,22 @@ A. Create the Model using Python : (**train.py**)
 4. Create the model using the LogisticRegression model.
 5. Calculat the model Accuracy
 
-B. Tune the model Parameter using Hyperdrive  : (**udacity-project.ipynb**)
+  B. Tune the model Parameters using Hyperdrive  : (**udacity-project.ipynb**)
+The parameters are **(C : "Inverse of regularization strength. Smaller values cause stronger regularization" , max_iter : "Maximum number of iterations to converge")**
 
-1. Define the parameter sampling method to use over the hyperparameter space where we specify a liste of discret value used during the tuning this parameter **(C : "Inverse of regularization strength. Smaller values cause stronger regularization" , max_iter : "Maximum number of iterations to converge")** *this choice of value was made after multiple execution of the hyperdrive run*
-2. Clean the data by using One hote encoding technique to deal with the discret features 
-3. Split the data into training and testing sets.
-4. Create the model using the LogisticRegression model.
-5. Calculat the model Accuracy
+1. Define the parameter sampling method to use over the hyperparameter space where we specify a liste of discret value used during the tuning *this choice of value was made after multiple execution of the hyperdrive run*
+2. Specify the early stopping policy to Automatically terminate poorly performing runs every time the training script reports the primary metric
+4. Create the SKLearn estimator 
+5. Define the hyperdrive configuration , submit the run and register the best model using the result of the parameter tunning 
+
+![Hyperdrive run](b.PNG "Hyperdrive run")
+
+![Hyperdrive metric](c.PNG "Hyperdrive metric")
+
+![Hyperdrive model registry](d.PNG "Hyperdrive model registry")
+
+
+
 
 
 
