@@ -3,19 +3,16 @@
 ## Overview
 **This project is part of the Udacity Azure ML Nanodegree.**
 
-Where we start by building and optimizing an Azure ML pipeline using the Python SDK and a provided Scikit-learn model. Once than we compare the accuracy of the best model to an Azure AutoML run. 
+Where we start by building and optimizing an Azure ML pipeline using the Python SDK and a provided Scikit-learn model. Once finished we compare the accuracy of the best model to an Azure AutoML run. 
 
 ## Summary
-The main object of this project is to predict if a client will subscribe to a terme deposit product (Variable value: ('yes') ,('no')) by using a dataset  (located  : https://www.kaggle.com/henriqueyamahata/bank-marketing ) related to direct marketing campaigns of a Portuguese banking institution.
+The Goal of this project is to predict if a client will subscribe to a terme deposit product (Variable value: ('yes') ,('no')) by using a dataset  (located  : https://www.kaggle.com/henriqueyamahata/bank-marketing ) related to direct marketing campaigns of a Portuguese banking institution.
 
 **The main step of the project are :**
 
-1. Create a model using Azure Python SDK "https://docs.microsoft.com/en-us/azure/developer/python/azure-sdk-overview"  and a LogisticRegression "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html" model
-
-2. Tune the parameter of the Scikit-learn model using hyperdrive "https://docs.microsoft.com/en-us/azure/machine-learning/how-to-tune-hyperparameters"
-
-3. Create a Model using Azure Auto ML "https://docs.microsoft.com/en-us/azure/machine-learning/concept-automated-ml" 
-
+1. Create a model using Azure Python SDK and a LogisticRegression model
+2. Tune the parameter of the Scikit-learn model using hyperdrive 
+3. Create a Model using Azure Auto ML 
 4. Compare the best performing model between the two created solutions based on their Accuracy 
 
 **The best model is  :**
@@ -25,15 +22,27 @@ The best performing model **Using the VotingEnsemble Algorithm** with the Accura
 ![Auto ML Run](a.PNG "Auto ML Run")
 
 
-
-
-
-
-
-
-
 ## Scikit-learn Pipeline :
-**Explain the pipeline architecture, including data, hyperparameter tuning, and classification algorithm.**
+
+The process of the created Pipeline is composed of two principal Step : 
+
+A. Create the Model using Python : (**train.py**)
+
+1. Create the TabularDataset by using TabularDatasetFactory
+2. Clean the data by using One hote encoding technique to deal with the discret features 
+3. Split the data into training and testing sets.
+4. Create the model using the LogisticRegression model.
+5. Calculat the model Accuracy
+
+B. Tune the model Parameter using Hyperdrive  : (**udacity-project.ipynb**)
+
+1. Define the parameter sampling method to use over the hyperparameter space where we specify a liste of discret value used during the tuning this parameter **(C : "Inverse of regularization strength. Smaller values cause stronger regularization" , max_iter : "Maximum number of iterations to converge")** *this choice of value was made after multiple execution of the hyperdrive run*
+2. Clean the data by using One hote encoding technique to deal with the discret features 
+3. Split the data into training and testing sets.
+4. Create the model using the LogisticRegression model.
+5. Calculat the model Accuracy
+
+
 
 **What are the benefits of the parameter sampler you chose?**
 
