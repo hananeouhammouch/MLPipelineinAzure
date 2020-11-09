@@ -8,7 +8,7 @@ Where we start by building and optimizing an Azure ML pipeline using the Python 
 ## Summary
 In a banking context : The main oject of this project is to predict if a client will subscribe to a terme deposit product (Variable value: ('yes') ,('no')) by using a dataset  (located here : https://www.kaggle.com/henriqueyamahata/bank-marketing ) related to direct marketing campaigns of a Portuguese banking institution.
 
-**The main step of the project are described below  : **
+**The main step of the project are described below  :**
 
 1. Create a model using Azure Python SDK "https://docs.microsoft.com/en-us/azure/developer/python/azure-sdk-overview"  and a LogisticRegression "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html" model.
 
@@ -16,7 +16,13 @@ In a banking context : The main oject of this project is to predict if a client 
 
 3. Create a Model using Azure Auto ML "https://docs.microsoft.com/en-us/azure/machine-learning/concept-automated-ml" 
 
-4. Compare the best performing model between the two created solutions based on their Accuracy where i
+4. Compare the best performing model between the two created solutions based on their Accuracy 
+
+**The best model is described below  :**
+
+The best performing model "VotingEnsemble" with the Accuracy of "0.
+92014" was the result of the Auto ML run.
+
 
 
 
