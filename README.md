@@ -6,11 +6,11 @@
 Where we start by building and optimizing an Azure ML pipeline using the Python SDK and a provided Scikit-learn model. Once than we compare the accuracy of the best model to an Azure AutoML run. 
 
 ## Summary
-In a banking context : The main oject of this project is to predict if a client will subscribe to a terme deposit product (Variable value: ('yes') ,('no')) by using a dataset  (located  : https://www.kaggle.com/henriqueyamahata/bank-marketing ) related to direct marketing campaigns of a Portuguese banking institution.
+The main object of this project is to predict if a client will subscribe to a terme deposit product (Variable value: ('yes') ,('no')) by using a dataset  (located  : https://www.kaggle.com/henriqueyamahata/bank-marketing ) related to direct marketing campaigns of a Portuguese banking institution.
 
 **The main step of the project are :**
 
-1. Create a model using Azure Python SDK "https://docs.microsoft.com/en-us/azure/developer/python/azure-sdk-overview"  and a LogisticRegression "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html" model.
+1. Create a model using Azure Python SDK "https://docs.microsoft.com/en-us/azure/developer/python/azure-sdk-overview"  and a LogisticRegression "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html" model
 
 2. Tune the parameter of the Scikit-learn model using hyperdrive "https://docs.microsoft.com/en-us/azure/machine-learning/how-to-tune-hyperparameters"
 
