@@ -22,7 +22,7 @@ The main object of this project is to predict if a client will subscribe to a te
 
 The best performing model **Using the VotingEnsemble Algorithm** with the Accuracy of **0.92014** was the result of the **Auto ML run.**
 
-![Auto ML Run](Optimizing-an-ML-Pipeline-in-Azure/Auto ML Run (Azure ML Studio).PNG "Auto ML Run")
+![Auto ML Run](a.PNG "Auto ML Run")
 
 
 
