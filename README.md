@@ -42,7 +42,7 @@ The design of the created Pipeline is composed of two principal Step :
 
 *We use RandomParameterSampling which Defines random sampling over a hyperparameter search space to sample from a set of discrete values for max_iter and C hyperparameters . This will make the hyperparameter tunning choice more specific.
 
-*We also use BanditPolicy which defines an early termination policy based on slack factore equal to 0.01 as a criteria for evaluation. This choice mean tha  the primary metric of every run (Y + Y * 0.2) will be compared to best metric of the hyperdrive execution , and if smaller, it cancels the run. this will assure that every run will give better accuracy than the one before*
+*We also use BanditPolicy which defines an early termination policy based on slack factore equal to 0.01 as a criteria for evaluation. This choice mean that the primary metric of every run Y using this formula (Y + Y * 0.01) will be compared to the best metric of the hyperdrive execution , and if smaller, it cancels the run. this will assure that every run will give better accuracy than the one before*
 
 ![Hyperdrive run](b.PNG "Hyperdrive run")
 ![Hyperdrive metric](c.PNG "Hyperdrive metric")
