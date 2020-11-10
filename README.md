@@ -35,7 +35,7 @@ The design of the created Pipeline is composed of two principal Step :
 
   B. Tune the model Parameters using Hyperdrive  : (**udacity-project.ipynb**)
 
-1. Define the parameter sampling method to use where we specify a list of discrete value to use during the tuning *this choice of value was made after multiple executions of the hyperdrive run*
+1. Define the parameter sampling method where we specify a list of discrete value to use during the tuning *this choice of value was made after multiple executions of the hyperdrive run*
 2. Specify the early stopping policy to Automatically terminate poorly performing runs every time the training script reports the primary metric
 4. Create the SKLearn estimator 
 5. Define the hyperdrive configuration, submit the run and register the best model by using the result of the parameter tunning  **(C = 0.01 , max_iter = 400 give an Accuracy of 0.913)** 
