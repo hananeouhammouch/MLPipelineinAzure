@@ -51,7 +51,7 @@ The process of the created solution is composed of three principal Step :
 
   A. Define the Tabular dataset, clean  the data and specify the training and the testing sets  (**similar to the Scikit-learn Pipeline**)
   
-  B. Specify the configuration for the auto ML run
+  B. Specify the configuration for the auto ML run (**udacity-project.ipynb**)
   
   ![auto ml configuration](e.png "auto ml configuration")
   
