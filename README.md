@@ -64,7 +64,7 @@ The process of the created solution is composed of three principal Step :
 ## Pipeline comparison
 
 To analyze the distinction among the two models we used the Accuracy as a primary metric and the outcome was that Auto ML provides more high-grade performance.
-This result is coherent mostly because Auto ML run not only test more hyperparameter value than the Scikit-learn process but also more model too 
+This result is coherent mostly because Auto ML run not only test more hyperparameter value than the Scikit-learn process but also more algorithm too 
 
 ## Future work
 
