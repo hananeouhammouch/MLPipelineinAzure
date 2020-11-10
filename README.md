@@ -61,7 +61,7 @@ The process of the created solution is composed of three principal Step :
   
   ![auto ml configuration](e.png "auto ml configuration")
   
-  C. Submit the run and register the best model **(VotingEnsemble Algorithm and the Accuracy is 0.92014)**  
+  C. Submit the run and register the best model **(VotingEnsemble Algorithm and the Accuracy is 0.92014)** which involves summing the predictions made by multiple other classification models.
   
  ![automl result](f.PNG "automl result")
  ![automl model registry](g.PNG "automl model registry")
