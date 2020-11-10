@@ -77,6 +77,6 @@ The impovement can be made not only in the Auto ml process by trying to handel t
 
 once finished we delete the compute instance and the compute cluster used during this project  to not incur any charges.
 
- ![automl result](h.PNG "automl result")
-  ![automl result](i.PNG "automl result")
+ ![Compute cluster delete](h.PNG "Compute cluster delete")
+ ![Compute instance delete](i.PNG "Compute instance delete")
 
