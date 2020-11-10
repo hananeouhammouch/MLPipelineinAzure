@@ -49,23 +49,34 @@ The parameters are **(C : "Inverse of regularization strength" , max_iter : "Max
 
 ## AutoML
 
-The process of the created solution is composed of two principal Step : 
+The process of the created solution is composed of tree principal Step : 
 
-  A. Define the Tabular dataset ,clean  the data and specify the training the the testing sets  (**like the Scikit-learn Pipeline**)
-  A. Specify the configuration for the auto ML run so that he can choose the best model and hyperparameters for us
+  A. Define the Tabular dataset ,clean  the data and specify the training and the testing sets  (**like the Scikit-learn Pipeline**)
+  
+  B. Specify the configuration for the auto ML run
+  
   ![auto ml configuration](e.png "auto ml configuration")
-
+  
+  C. Submit the run and register the best model **(VotingEnsemble Algorithm and the Accuracy is 0.92014)**  
+  
+ ![automl result](f.PNG "automl result")
+ ![automl model registry](g.PNG "automl model registry")
   
   
-
-
-
 ## Pipeline comparison
-**Compare the two models and their performance. What are the differences in accuracy? In architecture? If there was a difference, why do you think there was one?**
+
+To compare the difference of the two model we used the Accuracy as a primay metric and the result was that Auto ML give better performance.
+This result is logical mostly because Auto-ML  run not ony test more hyperparameter than the Scikit-learn process but also more model too 
 
 ## Future work
-**What are some areas of improvement for future experiments? Why might these improvements help the model?**
+
+The impovement can be made not only in the Auto ml process by trying to handel the Imbalanced data by not using the cleand data function and leave the featurization to the Auto ML run. but also in the Scikit-learn process by using other algorithm and testing odher configuration to tune the hyperparameter
+
 
 ## Proof of cluster clean up
-**If you did not delete your compute cluster in the code, please complete this section. Otherwise, delete this section.**
-**Image of cluster marked for deletion**
+
+once finished we delete the compute instance and the compute cluster used during this project  to not incur any charges.
+
+ ![automl result](h.PNG "automl result")
+  ![automl result](i.PNG "automl result")
+
