@@ -10,7 +10,7 @@ The purpose of this project is to predict if a client will subscribe to a term d
 
 **The main steps of the project are:**
 
-1. Build a model using Azure Python SDK and a LogisticRegression model
+1. Build a model using Azure Python SDK and a LogisticRegression algorithm
 2. Tune the parameter of the Scikit-learn model using hyperdrive 
 3. Design a Model using Azure Auto ML 
 4. Compare the best performing model between the two created solutions based on their Accuracy 
