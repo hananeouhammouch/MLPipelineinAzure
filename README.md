@@ -70,7 +70,7 @@ We start First by defining the Tabular dataset  from the data source, clean the 
   
    ![auto ml configuration](e.png "auto ml configuration")
     
-We move then to the AutoML configuration where we specify the type of the task **Classification**, the primary metric **Accuracy**, the data, the column we want to predict, and the constraint. We finally Call the submit method on the experiment object and pass the run configuration. Once finished we register the model for future use
+We move then to the AutoML configuration where we specify the type of the task **Classification**, the primary metric **Accuracy**, the data, the column we want to predict, and the constraint. We finally Call the submit method on the experiment object and pass the run configuration. Once finished we register the model for future use.
 In this case, the best model was generated using **VotingEnsemble Algorithm** which involves summing the predictions made by multiple other classification models and give us an  **Accuracy of 0.92049**
 
    ![automl run](automlrun.PNG "automl run")
