@@ -30,7 +30,7 @@ Following a summary of the model creation and the decisions made during this fir
 
   **A. Create the Model using Python :** (**train.py**) <a name="subparagraph1"></a>
 
-We start first by creating a tabular dataset **TabularDatasetFactory** from the data source to do some exploration and understand the meaning of each feature once done we start to prepare and clean the data by using one-hot encoding technique to deal with discrete features, after that, we split the result to training and testing sets. 
+We start first by creating a tabular dataset **TabularDatasetFactory** from the data source to do some exploration and understand the meaning of each feature once done we  prepare and clean the data by using one-hot encoding technique to deal with discrete features, after that, we split the result to training and testing sets. 
 
 We then move to the choice of the best algorithm for our classification problem, which is **LogisticRegression** because we are trying to predict if a client will subscribe to a term deposit product (yes or no) which means **two (and only two) outcomes**. After the creation of the model, we calculate it's **Accuracy**
 
