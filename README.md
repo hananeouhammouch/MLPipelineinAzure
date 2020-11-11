@@ -51,19 +51,17 @@ Once than we create SKLearn estimator , Define the hyperdrive configuration and 
  **C. Result of the Scikit-learn Pipeline: <a name="subparagraph3"></a>
 
 We run this Pipeline mutiple time and do some changes to the Hyperdrive configuration to improve our Accuracy and once satisified  we register our model for future use.
+In this case the best model was generated using this hyperparameters **(C = '0.02', max_iter = '100')** and give us an  **Accuracy of 0.91471927**
 
 ![Hyperdrive run](hyperdiverun.PNG "Hyperdrive run")
 
-The execution of this process means runnig this model mutiple times using different value of the parameter and comparing the result of each run to choose the best Paramater.
+*The execution of this process means runnig this model mutiple times using different value of the parameter and in the same time comparing the result of each run to choose the best Paramater at the end*
 
 ![Hyperdrive metric](hyperdivermetric.PNG "Hyperdrive metric")
 
 
-![Hyperdrive metric](c.PNG "Hyperdrive metric")
-![Hyperdrive model registry](d.PNG "Hyperdrive model registry")
-
-
 ## AutoML <a name="AutoML"></a>
+
 <a name="subparagraph11"></a>
 <a name="subparagraph12"></a>
 <a name="subparagraph13"></a>
