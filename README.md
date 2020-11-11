@@ -10,7 +10,7 @@ The purpose of this project is to predict if a client will subscribe to a term d
 
 ![projectdiagrame](projectdiagrame.png "projectdiagrame")
 
-Once the experiments over and the best models generated we compared their performance using the **Accuracy** as a primary metric, which leads us to conclude that the best solution resulting from the **Auto ML run** is a model based on the **VotingEnsemble Algorithm** because he give us an **Accuracy of 0.92014**
+Once the two experiments over and the best models generated we compared their performance using the **Accuracy** as a primary metric, which leads us to conclude that the best solution resulting from the **Auto ML run** is a model based on the **VotingEnsemble Algorithm** because he give us an **Accuracy of 0.92014**
 
 ## Scikit-learn Pipeline :
 
