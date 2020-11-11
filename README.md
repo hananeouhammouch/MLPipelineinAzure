@@ -6,42 +6,23 @@
 Where we start by building and optimizing an Azure ML pipeline using the Python SDK and a provided Scikit-learn model. Once finished we compare the accuracy of the best model to an Azure AutoML run. 
 
 # Table of contents
-1. [Introduction](#introduction)
-2. [Some paragraph](#paragraph1)
-    1. [Sub paragraph](#subparagraph1)
+1. [Summary](#Summary)
+2. [Scikit-learn Pipeline](#Scikit-learn Pipeline)
+    1. [Create the Model using Python](#subparagraph1)
 3. [Another paragraph](#paragraph2)
 
-## Summary
+## Summary of the project <a name="Summary"></a>
 The purpose of this project is to predict if a client will subscribe to a term deposit product by using a dataset  (located here: https://www.kaggle.com/henriqueyamahata/bank-marketing ) related to direct marketing campaigns of a Portuguese banking institution by using Azure ML pipeline (Python SDK) and Azure AutoML in two different process.
 
 ![projectdiagrame](projectdiagrame.png "projectdiagrame")
 
 Once the two experiments over and the best models generated we compared their performance using the **Accuracy** as a primary metric, which leads us to conclude that the best solution resulting from the **Auto ML run** is a model based on the **VotingEnsemble Algorithm** because he give us an **Accuracy of 0.92014**
 
-## This is the introduction <a name="introduction"></a>
-Some introduction text, formatted in heading 2 style
-
-## Some paragraph <a name="paragraph1"></a>
-The first paragraph text
-
-### Sub paragraph <a name="subparagraph1"></a>
-This is a sub paragraph, formatted in heading 3 style
-
-## Another paragraph <a name="paragraph2"></a>
-The second paragraph text
-
-##  Table of Contents
-1. [Scikit-learn Pipeline](# Scikit-learn Pipeline)
-2. [AutoML](# AutoML)
-3. [Pipeline comparison](# Pipeline comparison)
-3. [Future work](# Future work)
-3. [Proof of cluster clean up](# Proof of cluster clean up)
-
-## Scikit-learn Pipeline :
+## Description of the Scikit-learn Pipeline :<a name="Scikit-learn Pipeline"></a>
 
 The design of the created Pipeline is composed of two principal Step : 
 
-  A. Create the Model using Python : (**train.py**)
+  A. Create the Model using Python : (**train.py**) <a name="subparagraph1"></a>
 
 1. Create the TabularDataset using TabularDatasetFactory
 2. Clean the data using One hot encoding technique to deal with the discrete features 
