@@ -28,17 +28,15 @@ Once the two experiments over and the best models generated we compared their pe
 
 ## Description of the Scikit-learn Pipeline :<a name="Scikit"></a>
 
-Below a description of the model creation and the choices made during this first step of the project :
+You can find below a small description of the model creation and the choices made during this first step of the project :
 
   A. Create the Model using Python : (**train.py**) <a name="subparagraph1"></a>
 
-We start  first by creating a tabular dataset from the the datasource to do some exploration and understind the meaning of each features once than we start to prepare and clean the data by using one hot encodig technique to deal with discrete features , after the preparation we split the result to training and testing sets. 
+We start  first by creating a tabular dataset **TabularDatasetFactory** from the the datasource to do some exploration and understind the meaning of each features once than we start to prepare and clean the data by using one hot encodig technique to deal with discrete features , after the preparation we split the result to training and testing sets. 
 
-We then move to choising the best algorithm for our classification problem, which is **LogisticRegression** because we are trying  to predict if a client will subscribe to a term deposit product (yes or no) **two (and only two) outcomes**
+We then move to choising the best algorithm for our classification problem, which is **LogisticRegression** because we are trying  to predict if a client will subscribe to a term deposit product (yes or no) which mean **two (and only two) outcomes** . After the creation of the model we calculate it's **Accuracy**
 
-After thr creation of the model we calculate it's **Accuracy**
-
-
+Choosing the model based on only two parameters does not ensure that it will be functional in production which move us to the second step of this pipeline **Tune the model Parameters using Hyperdrive**
 
   B. Tune the model Parameters using Hyperdrive  : (**udacity-project.ipynb**) <a name="subparagraph2"></a>
 
