@@ -5,26 +5,24 @@
 
 Where we start by building and optimizing an Azure ML pipeline using the Python SDK and a provided Scikit-learn model. Once finished we compare the accuracy of the best model to an Azure AutoML run. 
 
-# Table of contents
-1. [Summary](#Summary)
-2. [Scikit-learn Pipeline](#Scikit)
-    1. [Create the Model using Python](#subparagraph1)
-    2. [Tune the Parameters using Hyperdrive](#subparagraph2)
-    3. [Result](#subparagraph3)
-3. [AutoML Pipeline](#AutoML)
-    1. [Configuration](#subparagraph11)
-    2. [Prepocicing](#subparagraph12)
-    3. [Result](#subparagraph13)
-4. [Pipeline comparison](#comparison)
-5. [Future work](#Future)
-
-
 ## Summary of the project <a name="Summary"></a>
 The purpose of this project is to predict if a client will subscribe to a term deposit product by using a dataset  (located here: https://www.kaggle.com/henriqueyamahata/bank-marketing ) related to direct marketing campaigns of a Portuguese banking institution by using Azure ML pipeline (Python SDK) and Azure AutoML in two different process.
 
 ![projectdiagrame](projectdiagrame.png "projectdiagrame")
 
 Once the two experiments over and the best models generated we compared their performance using the **Accuracy** as a primary metric, which leads us to conclude that the best solution resulting from the **Auto ML run** is a model based on the **VotingEnsemble Algorithm** because he give us an **Accuracy of 0.92014**
+
+# Table of contents
+1. [Scikit-learn Pipeline](#Scikit)
+    1. [Create the Model using Python](#subparagraph1)
+    2. [Tune the Parameters using Hyperdrive](#subparagraph2)
+    3. [Result](#subparagraph3)
+2. [AutoML Pipeline](#AutoML)
+    1. [Configuration](#subparagraph11)
+    2. [Prepocicing](#subparagraph12)
+    3. [Result](#subparagraph13)
+3. [Pipeline comparison](#comparison)
+4. [Future work](#Future)
 
 ## Description of the Scikit-learn Pipeline :<a name="Scikit"></a>
 
