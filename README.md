@@ -6,11 +6,11 @@
 Where we start by building and optimizing an Azure ML pipeline using the Python SDK and a provided Scikit-learn model. Once finished we compare the accuracy of the best model to an Azure AutoML run. 
 
 ## Summary of the project <a name="Summary"></a>
-The purpose of this project is to predict if a client will subscribe to a term deposit product by using a dataset  (located here: https://www.kaggle.com/henriqueyamahata/bank-marketing ) related to direct marketing campaigns of a Portuguese banking institution by using Azure ML pipeline (Python SDK) and Azure AutoML in two different processes.
+The purpose of this project is to predict if a client will subscribe to a term deposit product by using a dataset  (located here: https://www.kaggle.com/henriqueyamahata/bank-marketing ) related to direct marketing campaigns of a Portuguese banking institution by creating an Azure ML pipeline (Python SDK) and an Azure AutoML in two different processes.
 
 ![projectdiagrame](projectdiagrame.png "projectdiagrame")
 
-Once the two experiments over and the best models generated we compared their performance using the **Accuracy** as a primary metric, which leads us to conclude that the best solution resulting from the **Auto ML run** is a model based on the **VotingEnsemble Algorithm** because he gives us an **Accuracy of 0.92014**
+Once the two experiments were done and the best models generated we compared their performance using the **Accuracy** as a primary metric, which leads us to conclude that the best solution resulting from the **Auto ML run** is a model based on the **VotingEnsemble Algorithm** because he gives us an **Accuracy of 0.92014**
 
 # Table of contents
 1. [Scikit-learn Pipeline](#Scikit)
@@ -26,22 +26,22 @@ Once the two experiments over and the best models generated we compared their pe
 
 ## Description of the Scikit-learn Pipeline :<a name="Scikit"></a>
 
-Below a description of the model creation and the choices made during this first step of the project :
+Following a summary of the model creation and the decisions made during this first step of the project :
 
   **A. Create the Model using Python :** (**train.py**) <a name="subparagraph1"></a>
 
-We start first by creating a tabular dataset **TabularDatasetFactory** from the data source to do some exploration and understand the meaning of each feature once than we start to prepare and clean the data by using one-hot encoding technique to deal with discrete features, after the preparation, we split the result to training and testing sets. 
+We start first by creating a tabular dataset **TabularDatasetFactory** from the data source to do some exploration and understand the meaning of each feature once done we start to prepare and clean the data by using one-hot encoding technique to deal with discrete features, after that, we split the result to training and testing sets. 
 
-We then move to choose the best algorithm for our classification problem, which is **LogisticRegression** because we are trying to predict if a client will subscribe to a term deposit product (yes or no) which means **two (and only two) outcomes**. After the creation of the model, we calculate it's **Accuracy**
+We then move to the choice of the best algorithm for our classification problem, which is **LogisticRegression** because we are trying to predict if a client will subscribe to a term deposit product (yes or no) which means **two (and only two) outcomes**. After the creation of the model, we calculate it's **Accuracy**
 
 Choosing the model based on only two parameters and after one run does not ensure that it will be functional in production which moves us to the second step of this pipeline **Tune the model Parameters using Hyperdrive**
 
  **B. Tune the model Parameters using Hyperdrive  :** (**udacity-project.ipynb**) <a name="subparagraph2"></a>
   
-To improve the accuracy of our model we optimize our hyperparameters using Azure Machine Learning's tuning capabilities **Hyperdrive**.
+To improve the accuracy of our model we optimize our hyperparameters using Azure Machine Learning's tuning capabilities **Hyperdrive**
 
 First of all, we define the hyperparameter space to sweep over. which means tuning the **C** and **max_iter** parameters. In this step, we use random sampling **RandomParameterSampling** to try different configuration sets of hyperparameters to maximize our primary metric, Accuracy.
-*We use RandomParameterSampling which Defines random sampling over a hyperparameter search space to sample from a set of discrete values for max_iter and C hyperparameters. This will make the hyperparameter tunning choice more specific*
+* This choice means defines random sampling over a hyperparameter search space to sample from a set of discrete values for max_iter and C hyperparameters which make This hyperparameter tunning more specific*
 
 We then define our termination Policy for every run using **BanditPolicy** based on a slack factor equal to 0.01 as criteria for evaluation to conserves resources by terminating runs that are poorly performing.
 *This choice means that the primary metric of every run Y using this formula (Y + Y * 0.01) will be compared to the best metric of the hyperdrive execution and if smaller, it cancels the run. this will assure that every run will give better accuracy than the one before*
@@ -50,12 +50,12 @@ Once completed we create a SKLearn estimator, Define the hyperdrive configuratio
 
  **C. Result of the Scikit-learn Pipeline:** <a name="subparagraph3"></a>
 
-We run this Pipeline multiple times and do some changes to the Hyperdrive configuration to improve our Accuracy and once satisfied we register our model for future use.
+We run this Pipeline multiple times and do some modifications to the Hyperdrive configuration to improve our Accuracy and once satisfied we register our model for future use.
 In this case the best model was generated using this hyperparameters **(C = '0.02', max_iter = '100')** and give us an  **Accuracy of 0.91471927**
 
 ![Hyperdrive run](hyperdiverun.PNG "Hyperdrive run")
 
-*The execution of this process means running this model multiple times using a different value of the parameters and at the same time comparing the result of each run to choose the best hyperparameter at the end*
+*And the execution of this process means running this model multiple times using a different value of the parameters and at the same time comparing the result of each run to choose the best hyperparameter at the end*
 
 ![Hyperdrive metric](hyperdivermetric.PNG "Hyperdrive metric")
 
