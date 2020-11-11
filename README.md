@@ -8,12 +8,9 @@ Where we start by building and optimizing an Azure ML pipeline using the Python 
 ## Summary
 The purpose of this project is to predict if a client will subscribe to a term deposit product by using a dataset  (located here: https://www.kaggle.com/henriqueyamahata/bank-marketing ) related to direct marketing campaigns of a Portuguese banking institution.
 
-**The main steps of the project are:**
+**The main steps of the project are described below :**
 
-1. Build a model using Azure Python SDK and a LogisticRegression algorithm
-2. Tune the parameter of the Scikit-learn model using hyperdrive 
-3. Design a Model using Azure Auto ML 
-4. Compare the best performing model between the two created solutions based on their Accuracy 
+![projectdiagrame](projectdiagrame.png "projectdiagrame")
 
 **The best model:**
 
