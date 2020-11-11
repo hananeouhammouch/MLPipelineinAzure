@@ -6,7 +6,7 @@
 Where we start by building and optimizing an Azure ML pipeline using the Python SDK and a provided Scikit-learn model. Once finished we compare the accuracy of the best model to an Azure AutoML run. 
 
 ## Summary of the project <a name="Summary"></a>
-The purpose of this project is to predict if a client will subscribe to a term deposit product by using a dataset  (located here: https://www.kaggle.com/henriqueyamahata/bank-marketing ) related to direct marketing campaigns of a Portuguese banking institution by creating an Azure ML pipeline (Python SDK) and an Azure AutoML in two different processes.
+The purpose of this project is to predict if a client will subscribe to a term deposit product by using a dataset  (located here: https://www.kaggle.com/henriqueyamahata/bank-marketing ) related to direct marketing campaigns of a Portuguese banking institution by creating an Azure ML pipeline (Python SDK) and an Azure AutoML runs in two different processes.
 
 ![projectdiagrame](projectdiagrame.png "projectdiagrame")
 
