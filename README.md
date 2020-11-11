@@ -44,7 +44,7 @@ First of all, we define the hyperparameter space to sweep over. which means tuni
 * This choice means defines random sampling over a hyperparameter search space to sample from a set of discrete values for max_iter and C hyperparameters which make This hyperparameter tunning more specific*
 
 We then define our termination Policy for every run using **BanditPolicy** based on a slack factor equal to 0.01 as criteria for evaluation to conserves resources by terminating runs that are poorly performing.
-*This choice means that the primary metric of every run Y using this formula (Y + Y * 0.01) will be compared to the best metric of the hyperdrive execution and if smaller, it cancels the run. this will assure that every run will give better accuracy than the one before*
+* This choice means that the primary metric of every run Y using this formula (Y + Y * 0.01) will be compared to the best metric of the hyperdrive execution and if smaller, it cancels the run. this will assure that every run will give better accuracy than the one before*
 
 Once completed we create a SKLearn estimator, Define the hyperdrive configuration, and finally, launch the hyperparameter tuning job.
 
