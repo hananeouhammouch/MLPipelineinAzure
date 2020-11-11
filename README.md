@@ -19,7 +19,7 @@ Once the two experiments over and the best models generated we compared their pe
     3. [Result](#subparagraph3)
 2. [AutoML Pipeline](#AutoML)
     1. [Preparation](#subparagraph11)
-    2. [Configuration](#subparagraph12)
+    2. [Configuration and Run](#subparagraph12)
     3. [Result](#subparagraph13)
 3. [Pipeline comparison](#comparison)
 4. [Future work](#Future)
@@ -69,17 +69,21 @@ You can find below a small description of the AutoML process and the choices mad
 We start First by defining the Tabular dataset  from the datasource , clean the data by using one hot encoding  and specify the training and the testing sets (**similar to the Scikit-learn Pipeline**)
   
   **B. Configuration and Run of the AutoML process  : <a name="subparagraph12"></a>**
+  
+    ![auto ml configuration](e.png "auto ml configuration")
 
-We move then to the AutoML configuration where we specify the type of  the task **Classification** , the primary metric **Accuracy** , the data and the column we want to predict. We finelly Call the submit method on the experiment object and pass the run configuration
+We move then to the AutoML configuration where we specify the type of  the task **Classification** , the primary metric **Accuracy** , the data , the column we want to predict and the constraint. We finelly Call the submit method on the experiment object and pass the run configuration.Once finished we register the model for future use
 
+   ![automl run](automlrun.PNG "automl run")
+
+  **C. Result AutoML process  : <a name="subparagraph13"></a>**
 
 
   
-  ![auto ml configuration](e.png "auto ml configuration")
+  
   
   C. Submit the run and register the best model **(VotingEnsemble Algorithm and the Accuracy is 0.92014)** which involves summing the predictions made by multiple other classification models.
    
- ![automl model registry](g.PNG "automl model registry")
  
  *#More detail: Below the top algorithm tested by Auto ML Orderd by their Accuracy*
 
