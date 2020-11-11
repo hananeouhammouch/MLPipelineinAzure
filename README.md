@@ -26,7 +26,7 @@ Once the two experiments over and the best models generated we compared their pe
 
 ## Description of the Scikit-learn Pipeline :<a name="Scikit"></a>
 
-You can find below a small description of the model creation and the choices made during this first step of the project :
+Below a description of the model creation and the choices made during this first step of the project :
 
   **A. Create the Model using Python :** (**train.py**) <a name="subparagraph1"></a>
 
@@ -48,7 +48,7 @@ We then define our termination Policy for every run using **BanditPolicy** based
 
 Once than we create SKLearn estimator , Define the hyperdrive configuration and finally, lauch the hyperparameter tuning job.
 
- **C. Result of the Scikit-learn Pipeline: <a name="subparagraph3"></a>
+ **C. Result of the Scikit-learn Pipeline:** <a name="subparagraph3"></a>
 
 We run this Pipeline mutiple time and do some changes to the Hyperdrive configuration to improve our Accuracy and once satisified  we register our model for future use.
 In this case the best model was generated using this hyperparameters **(C = '0.02', max_iter = '100')** and give us an  **Accuracy of 0.91471927**
@@ -62,7 +62,7 @@ In this case the best model was generated using this hyperparameters **(C = '0.0
 
 ## AutoML <a name="AutoML"></a>
 
-You can find below a small description of the AutoML process and the choices made during this second step of the project :
+Below a description of the AutoML process and the choices made during this second step of the project :
 
   **A. Preparation of the data : <a name="subparagraph11"></a>**
 
@@ -73,22 +73,18 @@ We start First by defining the Tabular dataset  from the datasource , clean the 
    ![auto ml configuration](e.png "auto ml configuration")
     
 We move then to the AutoML configuration where we specify the type of  the task **Classification** , the primary metric **Accuracy** , the data , the column we want to predict and the constraint. We finelly Call the submit method on the experiment object and pass the run configuration.Once finished we register the model for future use
+In this case the best model was generated using **VotingEnsemble Algorithm** which involves summing the predictions made by multiple other classification models and give us an  **Accuracy of 0.92049**
 
    ![automl run](automlrun.PNG "automl run")
 
   **C. Result AutoML process  : <a name="subparagraph13"></a>**
 
+Before running AutoML Start first by checking over the input data to ensure high quality is being used to train model where he use class balancing detection , Missing Feature values imputation  and high cardinality feature detection.
 
-  
-  
-  
-  C. Submit the run and register the best model **(VotingEnsemble Algorithm and the Accuracy is 0.92014)** which involves summing the predictions made by multiple other classification models.
-   
- 
- *#More detail: Below the top algorithm tested by Auto ML Orderd by their Accuracy*
+After the exuction the AutoML Result not to only includ the best model resulting from the runnign of mutiple classification algorithm  but he also deliver intersting information to undertand more why this choise of model was made in this case of problem by understanding what features are directly impacting the model and why.
 
-![automl result](f.PNG "automl result")
-  
+  ![automlresult](automlresult.PNG "automlresult")
+
   
 ## Pipeline comparison <a name="comparison"></a>
 
@@ -103,6 +99,5 @@ The improvement can be made not only in the Auto ml process by not using the cle
 
 Once finished we delete the compute instance and the compute cluster used during this project to not incur any charges.
 
- ![Compute cluster delete](h.PNG "Compute cluster delete")
- ![Compute instance delete](i.PNG "Compute instance delete")
+ ![cleanup](cleanup.PNG "cleanup")
 
