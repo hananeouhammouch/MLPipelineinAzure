@@ -7,7 +7,7 @@ Where we start by building and optimizing an Azure ML pipeline using the Python 
 
 # Table of contents
 1. [Summary](#Summary)
-2. [Scikit-learn Pipeline](#Scikit-learn Pipeline)
+2. [Scikit-learn Pipeline](#Scikit)
     1. [Create the Model using Python](#subparagraph1)
 3. [Another paragraph](#paragraph2)
 
@@ -18,7 +18,7 @@ The purpose of this project is to predict if a client will subscribe to a term d
 
 Once the two experiments over and the best models generated we compared their performance using the **Accuracy** as a primary metric, which leads us to conclude that the best solution resulting from the **Auto ML run** is a model based on the **VotingEnsemble Algorithm** because he give us an **Accuracy of 0.92014**
 
-## Description of the Scikit-learn Pipeline :<a name="Scikit-learn Pipeline"></a>
+## Description of the Scikit-learn Pipeline :<a name="Scikit"></a>
 
 The design of the created Pipeline is composed of two principal Step : 
 
