@@ -30,26 +30,31 @@ Once the two experiments over and the best models generated we compared their pe
 
 You can find below a small description of the model creation and the choices made during this first step of the project :
 
-  A. Create the Model using Python : (**train.py**) <a name="subparagraph1"></a>
+  **A. Create the Model using Python :** (**train.py**) <a name="subparagraph1"></a>
 
 We start  first by creating a tabular dataset **TabularDatasetFactory** from the the datasource to do some exploration and understind the meaning of each features once than we start to prepare and clean the data by using one hot encodig technique to deal with discrete features , after the preparation we split the result to training and testing sets. 
 
 We then move to choising the best algorithm for our classification problem, which is **LogisticRegression** because we are trying  to predict if a client will subscribe to a term deposit product (yes or no) which mean **two (and only two) outcomes** . After the creation of the model we calculate it's **Accuracy**
 
-Choosing the model based on only two parameters does not ensure that it will be functional in production which move us to the second step of this pipeline **Tune the model Parameters using Hyperdrive**
+Choosing the model based on only two parameters and after one run does not ensure that it will be functional in production which move us to the second step of this pipeline **Tune the model Parameters using Hyperdrive**
 
-  B. Tune the model Parameters using Hyperdrive  : (**udacity-project.ipynb**) <a name="subparagraph2"></a>
+ **B. Tune the model Parameters using Hyperdrive  :** (**udacity-project.ipynb**) <a name="subparagraph2"></a>
+  
+To improve the Accuracy of our model we optimize our hyperparameters using Azure Machine Learning's tuning capabilities **Hyperdrive**.
 
-1. Define the parameter sampling method where we specify a list of discrete value to use during the tuning *this choice of value was made after multiple executions of the hyperdrive run*
-2. Specify the early stopping policy to Automatically terminate poorly performing runs every time the training script reports the primary metric
-4. Create the SKLearn estimator 
-5. Define the hyperdrive configuration, submit the run and register the best model by using the result of the parameter tunning  **(C = 0.01 , max_iter = 400 give an Accuracy of 0.913)** 
-
-*#More detail:* <a name="subparagraph3"></a>
-
+First of all  , we define the hyperparameter space to sweep over. which mean tuning the **C** and **max_iter** parameters. In this step we use random sampling **RandomParameterSampling** to try different configuration sets of hyperparameters to maximize our primary metric, Accuracy.
 *We use RandomParameterSampling which Defines random sampling over a hyperparameter search space to sample from a set of discrete values for max_iter and C hyperparameters. This will make the hyperparameter tunning choice more specific*
 
-*We also use BanditPolicy which defines an early termination policy based on a slack factor equal to 0.01 as criteria for evaluation. This choice means that the primary metric of every run Y using this formula (Y + Y * 0.01) will be compared to the best metric of the hyperdrive execution, and if smaller, it cancels the run. this will assure that every run will give better accuracy than the one before*
+We then define our termination Policy for every run using **BanditPolicy** based on a slack factor equal to 0.01 as criteria for evaluation to  conserves resources by terminating runs that are poorly performing.
+*This choice means that the primary metric of every run Y using this formula (Y + Y * 0.01) will be compared to the best metric of the hyperdrive execution, and if smaller, it cancels the run. this will assure that every run will give better accuracy than the one before*
+
+Once than we create SKLearn estimator , Define the hyperdrive configuration and finally, lauch the hyperparameter tuning job.
+
+
+
+
+
+
 
 ![Hyperdrive run](b.PNG "Hyperdrive run")
 ![Hyperdrive metric](c.PNG "Hyperdrive metric")
