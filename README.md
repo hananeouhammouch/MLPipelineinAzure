@@ -70,8 +70,8 @@ We start First by defining the Tabular dataset  from the datasource , clean the 
   
   **B. Configuration and Run of the AutoML process  : <a name="subparagraph12"></a>**
   
-    ![auto ml configuration](e.png "auto ml configuration")
-
+   ![auto ml configuration](e.png "auto ml configuration")
+    
 We move then to the AutoML configuration where we specify the type of  the task **Classification** , the primary metric **Accuracy** , the data , the column we want to predict and the constraint. We finelly Call the submit method on the experiment object and pass the run configuration.Once finished we register the model for future use
 
    ![automl run](automlrun.PNG "automl run")
