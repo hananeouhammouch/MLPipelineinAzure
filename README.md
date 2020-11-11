@@ -48,13 +48,17 @@ We then define our termination Policy for every run using **BanditPolicy** based
 
 Once than we create SKLearn estimator , Define the hyperdrive configuration and finally, lauch the hyperparameter tuning job.
 
+ **C. Result of the Scikit-learn Pipeline: <a name="subparagraph3"></a>
+
+We run this Pipeline mutiple time and do some changes to the Hyperdrive configuration to improve our Accuracy and once satisified  we register our model for future use.
+
+![Hyperdrive run](hyperdiverun.PNG "Hyperdrive run")
+
+The execution of this process means runnig this model mutiple times using different value of the parameter and comparing the result of each run to choose the best Paramater.
+
+![Hyperdrive metric](hyperdivermetric.PNG "Hyperdrive metric")
 
 
-
-
-
-
-![Hyperdrive run](b.PNG "Hyperdrive run")
 ![Hyperdrive metric](c.PNG "Hyperdrive metric")
 ![Hyperdrive model registry](d.PNG "Hyperdrive model registry")
 
