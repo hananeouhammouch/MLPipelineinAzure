@@ -75,7 +75,7 @@ In this case, the best model was generated using **VotingEnsemble Algorithm** wh
 
    ![automl run](automlrun.PNG "automl run")
 
-  **C. Result AutoML process  : <a name="subparagraph13"></a>**
+  **C. Result of the AutoML process  : <a name="subparagraph13"></a>**
 
 Before running AutoML Start first by checking over the input data to ensure high quality is being used to train the model where he uses class balancing detection, Missing Feature values imputation, and high cardinality feature detection.
 
