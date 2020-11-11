@@ -77,7 +77,7 @@ In this case, the best model was generated using **VotingEnsemble Algorithm** wh
 
   **C. Result of the AutoML process  : <a name="subparagraph13"></a>**
 
-Before running AutoML Start first by checking over the input data to ensure high quality is being used to train the model where he uses class balancing detection, Missing Feature values imputation, and high cardinality feature detection.
+Before running, AutoML Start first by checking over the input data to ensure high quality is being used to train the model where he uses class balancing detection, Missing Feature values imputation, and high cardinality feature detection.
 
 After the execution, the AutoML Result not only includes the best model resulting from the running of multiple classification algorithms but he also delivers interesting information to understand more why this choice of model was made in this case of problem by learning what features are directly impacting the model and why.
 
