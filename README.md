@@ -18,8 +18,8 @@ Once the two experiments over and the best models generated we compared their pe
     2. [Tune the Parameters using Hyperdrive](#subparagraph2)
     3. [Result](#subparagraph3)
 2. [AutoML Pipeline](#AutoML)
-    1. [Configuration](#subparagraph11)
-    2. [Prepocicing](#subparagraph12)
+    1. [Preparation](#subparagraph11)
+    2. [Configuration](#subparagraph12)
     3. [Result](#subparagraph13)
 3. [Pipeline comparison](#comparison)
 4. [Future work](#Future)
@@ -55,23 +55,25 @@ In this case the best model was generated using this hyperparameters **(C = '0.0
 
 ![Hyperdrive run](hyperdiverun.PNG "Hyperdrive run")
 
-*The execution of this process means runnig this model mutiple times using different value of the parameter and in the same time comparing the result of each run to choose the best Paramater at the end*
+*The execution of this process means runnig this model mutiple times using different value of the parameters and in the same time comparing the result of each run to choose the best hyperparameter at the end*
 
 ![Hyperdrive metric](hyperdivermetric.PNG "Hyperdrive metric")
 
 
 ## AutoML <a name="AutoML"></a>
 
-<a name="subparagraph11"></a>
-<a name="subparagraph12"></a>
-<a name="subparagraph13"></a>
+You can find below a small description of the AutoML process and the choices made during this second step of the project :
 
+  **A. Preparation of the data : <a name="subparagraph11"></a>**
 
-The process of the created solution is composed of three principal Step : 
-
-  A. Define the Tabular dataset, clean  the data and specify the training and the testing sets  (**similar to the Scikit-learn Pipeline**)
+We start First by defining the Tabular dataset  from the datasource , clean the data by using one hot encoding  and specify the training and the testing sets (**similar to the Scikit-learn Pipeline**)
   
-  B. Specify the configuration for the auto ML run (**udacity-project.ipynb**)
+  **B. Configuration and Run of the AutoML process  : <a name="subparagraph12"></a>**
+
+We move then to the AutoML configuration where we specify the type of  the task **Classification** , the primary metric **Accuracy** , the data and the column we want to predict. We finelly Call the submit method on the experiment object and pass the run configuration
+
+
+
   
   ![auto ml configuration](e.png "auto ml configuration")
   
