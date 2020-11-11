@@ -41,7 +41,7 @@ Choosing the model based on only two parameters and after one run does not ensur
 To improve the accuracy of our model we optimize our hyperparameters using Azure Machine Learning's tuning capabilities **Hyperdrive**
 
 First of all, we define the hyperparameter space to sweep over. which means tuning the **C** and **max_iter** parameters. In this step, we use random sampling **RandomParameterSampling** to try different configuration sets of hyperparameters to maximize our primary metric, Accuracy.
-* This choice means defines random sampling over a hyperparameter search space to sample from a set of discrete values for max_iter and C hyperparameters which make This hyperparameter tunning more specific*
+* This choice means defines random sampling over a hyperparameter search space to sample from a set of discrete values for max_iter and C hyperparameters which make This  tunning more specific*
 
 We then define our termination Policy for every run using **BanditPolicy** based on a slack factor equal to 0.01 as criteria for evaluation to conserves resources by terminating runs that are poorly performing.
 * This choice means that the primary metric of every run Y using this formula (Y + Y * 0.01) will be compared to the best metric of the hyperdrive execution and if smaller, it cancels the run. this will assure that every run will give better accuracy than the one before*
@@ -54,8 +54,6 @@ We run this Pipeline multiple times and do some modifications to the Hyperdrive 
 In this case the best model was generated using this hyperparameters **(C = '0.02', max_iter = '100')** and give us an  **Accuracy of 0.91471927**
 
 ![Hyperdrive run](hyperdiverun.PNG "Hyperdrive run")
-
-*And the execution of this process means running this model multiple times using a different value of the parameters and at the same time comparing the result of each run to choose the best hyperparameter at the end*
 
 ![Hyperdrive metric](hyperdivermetric.PNG "Hyperdrive metric")
 
