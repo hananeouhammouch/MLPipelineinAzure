@@ -9,7 +9,15 @@ Where we start by building and optimizing an Azure ML pipeline using the Python 
 1. [Summary](#Summary)
 2. [Scikit-learn Pipeline](#Scikit)
     1. [Create the Model using Python](#subparagraph1)
-3. [Another paragraph](#paragraph2)
+    2. [Tune the Parameters using Hyperdrive](#subparagraph2)
+    3. [Result](#subparagraph3)
+3. [AutoML Pipeline](#AutoML)
+    1. [Configuration](#subparagraph11)
+    2. [Prepocicing](#subparagraph12)
+    3. [Result](#subparagraph13)
+4. [Pipeline comparison](#comparison)
+5. [Future work](#Future)
+
 
 ## Summary of the project <a name="Summary"></a>
 The purpose of this project is to predict if a client will subscribe to a term deposit product by using a dataset  (located here: https://www.kaggle.com/henriqueyamahata/bank-marketing ) related to direct marketing campaigns of a Portuguese banking institution by using Azure ML pipeline (Python SDK) and Azure AutoML in two different process.
@@ -30,14 +38,14 @@ The design of the created Pipeline is composed of two principal Step :
 4. Build the model using the LogisticRegression algorithm.
 5. Calculate the model Accuracy
 
-  B. Tune the model Parameters using Hyperdrive  : (**udacity-project.ipynb**)
+  B. Tune the model Parameters using Hyperdrive  : (**udacity-project.ipynb**) <a name="subparagraph2"></a>
 
 1. Define the parameter sampling method where we specify a list of discrete value to use during the tuning *this choice of value was made after multiple executions of the hyperdrive run*
 2. Specify the early stopping policy to Automatically terminate poorly performing runs every time the training script reports the primary metric
 4. Create the SKLearn estimator 
 5. Define the hyperdrive configuration, submit the run and register the best model by using the result of the parameter tunning  **(C = 0.01 , max_iter = 400 give an Accuracy of 0.913)** 
 
-*#More detail:*
+*#More detail:* <a name="subparagraph3"></a>
 
 *We use RandomParameterSampling which Defines random sampling over a hyperparameter search space to sample from a set of discrete values for max_iter and C hyperparameters. This will make the hyperparameter tunning choice more specific*
 
@@ -48,7 +56,11 @@ The design of the created Pipeline is composed of two principal Step :
 ![Hyperdrive model registry](d.PNG "Hyperdrive model registry")
 
 
-## AutoML
+## AutoML <a name="AutoML"></a>
+<a name="subparagraph11"></a>
+<a name="subparagraph12"></a>
+<a name="subparagraph13"></a>
+
 
 The process of the created solution is composed of three principal Step : 
 
@@ -67,16 +79,16 @@ The process of the created solution is composed of three principal Step :
 ![automl result](f.PNG "automl result")
   
   
-## Pipeline comparison
+## Pipeline comparison <a name="comparison"></a>
 
 To analyze the distinction among the two models we used the Accuracy as a primary metric and the outcome was that Auto ML provides more high-grade performance.
 This result is coherent mostly because Auto ML run not only test more hyperparameter value than the Scikit-learn process but also more algorithm too 
 
-## Future work
+## Future work <a name="Future"></a>
 
 The improvement can be made not only in the Auto ml process by not using the cleaned data function (train.py) and leave the featurization to the Auto ML run **(to handle the Imbalanced data)** . but also in the Scikit-learn process by using other algorithm and testing other configuration to tune the hyperparameter
 
-## Proof of cluster clean up
+## Proof of cluster clean up <a name="delete"></a>
 
 Once finished we delete the compute instance and the compute cluster used during this project to not incur any charges.
 
